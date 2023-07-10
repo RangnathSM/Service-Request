@@ -74,7 +74,7 @@ const Service = () => {
         asset: 'PFT USB',
         city: 'Banglore',
         department: 'ECG',
-        issue: 'Issue 1',
+        issue: 'Issue 2 MJHNJNHJH JHJHJHJH JHJJHHHGGGFDDDBJKK',
         date: '2023/07/01',
       },
       {
@@ -82,7 +82,7 @@ const Service = () => {
         asset: 'PFT USB',
         city: 'Shivamogga',
         department: 'ICU',
-        issue: 'Issue 2',
+        issue: 'Issue 2 msdddfdfssasd fdsfdsvcdc',
         date: '2023/07/02',
       },
       {
@@ -90,7 +90,7 @@ const Service = () => {
         asset: 'PFT USB',
         city: 'Banglore',
         department: 'ECG',
-        issue: 'Issue 3',
+        issue: 'Issue 3 fdfssasd fdsfdsvcdc hhhdnnadkjdj',
         date: '2023/07/03',
       },
       {
@@ -443,15 +443,15 @@ const Service = () => {
             <Box width={{xl:'1030px', lg:'1030px', md:'850px', sm:'500px', xs:'400px'}} height='937px' sx={{boxShadow : "0px 0px 4px 0px #00000033", border: "0px solid #1746A280", borderRadius:'15px', marginTop:{xl:'20px', lg:'20px', md:'20px', sm:'20px', xs:'20px'}, marginLeft:{xl:'0px', lg:'0px', md:'25px', sm:'50px', xs:'38px'}}} >
                 <TableContainer sx={{ minWidth:{xl:1030, lg:1030, md:850, sm:500, xs:400}, height:'937px',borderRadius:'15px', }} aria-label="simple table">
                 <Table>
-                    <TableHead>
+                    <TableHead width='1030px' height='50px'>
                     <TableRow sx={{background:'#EFF5FE' }}>
                         <Box width='1030px' display="flex">
-                        <TableCell align="start" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'200px'}} >Hospital Name</TableCell>
-                        <TableCell align="start" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'180px'}} >Asset Name</TableCell>
-                        <TableCell align="start" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'120px'}} >City</TableCell>
-                        <TableCell align="start" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'120px'}} >Department</TableCell>
-                        <TableCell align="start" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'120px'}} >Issue</TableCell>
-                        <TableCell align="start" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'120px'}} >Date</TableCell>
+                        <TableCell align="left" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'250px',height:'30px'}} >Hospital Name</TableCell>
+                        <TableCell align="left" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'180px',height:'30px'}} >Asset Name</TableCell>
+                        <TableCell align="left" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'120px',height:'30px'}} >City</TableCell>
+                        <TableCell align="left" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'120px',height:'30px'}} >Department</TableCell>
+                        <TableCell align="left" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'100px',height:'30px'}} >Issue</TableCell>
+                        <TableCell align="left" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'120px',height:'30px'}} >Date</TableCell>
                         </Box>
                     </TableRow>
                     </TableHead>
@@ -459,12 +459,12 @@ const Service = () => {
                     {filteredServiceRequests.map((request, index) => (
                         <Box width='1030px'>
                         <TableRow display="flex" key={index}>
-                        <TableCell align="start" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'200px',borderColor:'black'}} component="th">{request.hospital}</TableCell>
-                        <TableCell align="start" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'180px',borderColor:'black'}} >{request.asset}</TableCell>
-                        <TableCell align="start" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'120px',borderColor:'black'}} >{request.city}</TableCell>
-                        <TableCell align="start" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'120px',borderColor:'black'}}>{request.department}</TableCell>
-                        <TableCell align="start" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'120px',borderColor:'black'}}>{request.issue}</TableCell>
-                        <TableCell align="start" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'120px',borderColor:'black'}}>{request.date}</TableCell>
+                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'250px',height:'35px',borderColor:'black'}} component="th">{(request.hospital)}</TableCell>
+                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'180px',height:'35px',borderColor:'black'}} >{(request.asset)}</TableCell>
+                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'120px',height:'35px',borderColor:'black'}} >{(request.city)}</TableCell>
+                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'120px',height:'35px',borderColor:'black'}}>{(request.department)}</TableCell>
+                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'100px',height:'35px',borderColor:'black',overflow: 'hidden', textOverflow: "ellipsis", display: "-webkit-box",  "-webkit-line-clamp": '2', "-webkit-box-orient": "vertical",}}>{(request.issue)}</TableCell>
+                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'120px',height:'35px',borderColor:'black'}}>{(request.date)}</TableCell>
                         </TableRow>
                         </Box>
                     ))}
