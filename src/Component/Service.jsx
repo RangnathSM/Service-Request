@@ -17,6 +17,7 @@ const Service = () => {
   const [sortOption, setSortOption] = useState('');
   const [filterDepartments, setFilterDepartments] = useState([]);
   const [filterCities, setFilterCities] = useState([]);
+  
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
@@ -30,10 +31,12 @@ const Service = () => {
     setAnchorElSort(null);
   };
 
-  const handleSortOptionSelect = (option) => {
+  
+  let handleSortOptionSelect = (option) => {
     setSortOption(option);
     setAnchorElSort(null);
   };
+ 
 
   const handleFilterClick = (event) => {
     setAnchorElFilter(event.currentTarget);
@@ -392,10 +395,10 @@ const Service = () => {
                     open={Boolean(anchorElSort)}
                     onClose={handleSortClose}
                 >
-                   <MenuItem onClick={() => handleSortOptionSelect('newestToOldest')} sx={{color:'#FF731D', fontSize:'16px', fontWeight:'500'}}>Newest to Oldest</MenuItem>
-                   <MenuItem onClick={() => handleSortOptionSelect('oldestToNewest')} sx={{color:'#212427', fontSize:'16px', fontWeight:'500'}}>Oldest to Newest</MenuItem>
-                   <MenuItem onClick={() => handleSortOptionSelect('aToZ')} sx={{color:'#FF731D', fontSize:'16px', fontWeight:'500'}}>A-Z</MenuItem>
-                   <MenuItem onClick={() => handleSortOptionSelect('zToA')} sx={{color:'#212427', fontSize:'16px', fontWeight:'500'}}>Z-A</MenuItem>
+                   <MenuItem onClick={() => handleSortOptionSelect('newestToOldest')} sx={{color: sortOption === 'newestToOldest' ? '#FF731D' : '#212427', fontSize:'16px', fontWeight:'500'}}>Newest to Oldest</MenuItem>
+                   <MenuItem onClick={() => handleSortOptionSelect('oldestToNewest')} sx={{color: sortOption === 'oldestToNewest' ? '#FF731D' : '#212427', fontSize:'16px', fontWeight:'500'}}>Oldest to Newest</MenuItem>
+                   <MenuItem onClick={() => handleSortOptionSelect('aToZ')} sx={{color: sortOption === 'aToZ' ? '#FF731D' : '#212427', fontSize:'16px', fontWeight:'500'}}>A-Z</MenuItem>
+                   <MenuItem onClick={() => handleSortOptionSelect('zToA')} sx={{color: sortOption === 'zToA' ? '#FF731D' : '#212427', fontSize:'16px', fontWeight:'500'}}>Z-A</MenuItem>
                 </Menu>
               <IconButton onClick={handleFilterClick} ><FilterAltOutlinedIcon  sx={{width:'60px', height:'40px', color:'#FF731D',marginLeft:'-20px' }}></FilterAltOutlinedIcon></IconButton>
                 <Menu
@@ -406,30 +409,30 @@ const Service = () => {
                   <Typography sx={{color:'#1746A2', fontSize:'18px', fontWeight:'500', marginLeft:'18px'}}>Department</Typography>
                   <MenuItem>
                     <FormControlLabel
-                     control={<Checkbox sx={{color:'#FF731D', '&.Mui-checked': {color: '#FF731D'}}} checked={filterDepartments.includes('Radiology')} onChange={handleDepartmentCheckboxChange} value="Radiology" />}
+                     control={<Checkbox sx={{color:'#212427', '&.Mui-checked': {color: '#FF731D'}}} checked={filterDepartments.includes('Radiology')} onChange={handleDepartmentCheckboxChange} value="Radiology" />}
                       label={<Typography style={{color:'#212427', fontSize:'14px', fontWeight:'500'}}>Radiology</Typography>}
                     />
                     <FormControlLabel
-                      control={<Checkbox sx={{color:'#FF731D', '&.Mui-checked': {color: '#FF731D'}}} checked={filterDepartments.includes('ECG')} onChange={handleDepartmentCheckboxChange} value="ECG" />}
+                      control={<Checkbox sx={{color:'#212427', '&.Mui-checked': {color: '#FF731D'}}} checked={filterDepartments.includes('ECG')} onChange={handleDepartmentCheckboxChange} value="ECG" />}
                       label={<Typography style={{color:'#212427', fontSize:'14px', fontWeight:'500'}}>ECG</Typography>}
                     />
                   <FormControlLabel
-                      control={<Checkbox sx={{color:'#FF731D', '&.Mui-checked': {color: '#FF731D'}}} checked={filterDepartments.includes('ICU')} onChange={handleDepartmentCheckboxChange} value="ICU" />}
+                      control={<Checkbox sx={{color:'#212427', '&.Mui-checked': {color: '#FF731D'}}} checked={filterDepartments.includes('ICU')} onChange={handleDepartmentCheckboxChange} value="ICU" />}
                       label={<Typography style={{color:'#212427', fontSize:'14px', fontWeight:'500'}}>ICU</Typography>}
                     />
                  </MenuItem>
                  <Typography sx={{color:'#1746A2', fontSize:'18px', fontWeight:'500', marginLeft:'18px'}}>City</Typography>
                   <MenuItem>
                  <FormControlLabel
-                      control={<Checkbox sx={{color:'#FF731D', '&.Mui-checked': {color: '#FF731D'}}} checked={filterCities.includes('Banglore')} onChange={handleCityCheckboxChange} value="Banglore" />}
+                      control={<Checkbox sx={{color:'#212427', '&.Mui-checked': {color: '#FF731D'}}} checked={filterCities.includes('Banglore')} onChange={handleCityCheckboxChange} value="Banglore" />}
                       label={<Typography style={{color:'#212427', fontSize:'14px', fontWeight:'500'}}>Banglore</Typography>}
                     />
                   <FormControlLabel
-                      control={<Checkbox sx={{color:'#FF731D', '&.Mui-checked': {color: '#FF731D'}}} checked={filterCities.includes('Shivamogga')} onChange={handleCityCheckboxChange} value="Shivamogga" />}
+                      control={<Checkbox sx={{color:'#212427', '&.Mui-checked': {color: '#FF731D'}}} checked={filterCities.includes('Shivamogga')} onChange={handleCityCheckboxChange} value="Shivamogga" />}
                       label={<Typography style={{color:'#212427', fontSize:'14px', fontWeight:'500'}}>Shivamogga</Typography>}
                     />
                     <FormControlLabel
-                      control={<Checkbox sx={{color:'#FF731D', '&.Mui-checked': {color: '#FF731D'}}} checked={filterCities.includes('Davangere')} onChange={handleCityCheckboxChange} value="Davangere" />}
+                      control={<Checkbox sx={{color:'#212427', '&.Mui-checked': {color: '#FF731D'}}} checked={filterCities.includes('Davangere')} onChange={handleCityCheckboxChange} value="Davangere" />}
                       label={<Typography style={{color:'#212427', fontSize:'14px', fontWeight:'500'}}>Davangere</Typography>}
                     />
                   </MenuItem>
