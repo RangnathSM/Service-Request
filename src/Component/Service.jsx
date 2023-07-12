@@ -7,6 +7,10 @@ import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search'
 import SortIcon from '@mui/icons-material/Sort'
 import TableContainer from '@mui/material/TableContainer';
+import { Link } from 'react-router-dom';
+
+
+
 
 
 const Service = () => {
@@ -17,6 +21,7 @@ const Service = () => {
   const [sortOption, setSortOption] = useState('');
   const [filterDepartments, setFilterDepartments] = useState([]);
   const [filterCities, setFilterCities] = useState([]);
+  
   
 
   const handleSearchChange = (event) => {
@@ -70,14 +75,19 @@ const Service = () => {
     
     const serviceRequests = [
       {
+        id:1,
         hospital: 'Apolo Hospital',
         asset: 'PFT USB',
         city: 'Banglore',
         department: 'ECG',
-        issue: 'Issue 2 MJHNJNHJH JHJHJHJH JHJJHHHGGGFDDDBJKK',
+        issue: 'Issue 2 MJHNJNHJH JHJHJHJH JHJJHHHGGGFDDDBJKKkkmmsdksmamcn nsananajdnxc njashbdjabxcxncjn nbcahbkacnad',
         date: '2023/07/01',
+        img:[
+          "https://img.freepik.com/free-photo/doctor-getting-patient-ready-ct-scan_23-2149367401.jpg?size=626&ext=jpg","https://img.freepik.com/free-photo/doctor-getting-patient-ready-ct-scan_23-2149367401.jpg?size=626&ext=jpg"
+        ]
       },
       {
+        id:2,
         hospital: 'Megan Hospital',
         asset: 'PFT USB',
         city: 'Shivamogga',
@@ -86,6 +96,7 @@ const Service = () => {
         date: '2023/07/02',
       },
       {
+        id:3,
         hospital: 'KIMS Hospital',
         asset: 'PFT USB',
         city: 'Banglore',
@@ -94,6 +105,7 @@ const Service = () => {
         date: '2023/07/03',
       },
       {
+        id:4,
         hospital: 'Narayana Hrudayalaya',
         asset: 'PFT USB',
         city: 'Shivamogga',
@@ -102,6 +114,7 @@ const Service = () => {
         date: '2023/07/04',
       },
       {
+        id:5,
         hospital: 'Subbhaiah Hospital',
         asset: 'PFT USB',
         city: 'Shivmogga',
@@ -110,6 +123,7 @@ const Service = () => {
         date: '2023/07/05',
       },
       {
+        id:6,
         hospital: 'SS Hospital',
         asset: 'PFT USB',
         city: 'Davangere',
@@ -118,6 +132,7 @@ const Service = () => {
         date: '2023/07/06',
       },
       {
+        id:7,
         hospital: 'MAX Hospital',
         asset: 'PFT USB',
         city: 'Banglore',
@@ -126,38 +141,43 @@ const Service = () => {
         date: '2023/07/02',
       },
       {
+        id:1,
         hospital: 'Apolo Hospital',
         asset: 'PFT USB',
         city: 'Banglore',
         department: 'ECG',
-        issue: 'Issue 1',
+        issue: 'Issue 2 MJHNJNHJH JHJHJHJH JHJJHHHGGGFDDDBJKK',
         date: '2023/07/01',
       },
       {
+        id:2,
         hospital: 'Megan Hospital',
         asset: 'PFT USB',
         city: 'Shivamogga',
-        department: 'Radiology',
-        issue: 'Issue 2',
+        department: 'ICU',
+        issue: 'Issue 2 msdddfdfssasd fdsfdsvcdc',
         date: '2023/07/02',
       },
       {
+        id:3,
         hospital: 'KIMS Hospital',
         asset: 'PFT USB',
         city: 'Banglore',
         department: 'ECG',
-        issue: 'Issue 3',
+        issue: 'Issue 3 fdfssasd fdsfdsvcdc hhhdnnadkjdj',
         date: '2023/07/03',
       },
       {
+        id:4,
         hospital: 'Narayana Hrudayalaya',
         asset: 'PFT USB',
         city: 'Shivamogga',
-        department: 'Radiology',
+        department: 'ICU',
         issue: 'Issue 4',
         date: '2023/07/04',
       },
       {
+        id:5,
         hospital: 'Subbhaiah Hospital',
         asset: 'PFT USB',
         city: 'Shivmogga',
@@ -166,6 +186,7 @@ const Service = () => {
         date: '2023/07/05',
       },
       {
+        id:6,
         hospital: 'SS Hospital',
         asset: 'PFT USB',
         city: 'Davangere',
@@ -174,6 +195,7 @@ const Service = () => {
         date: '2023/07/06',
       },
       {
+        id:7,
         hospital: 'MAX Hospital',
         asset: 'PFT USB',
         city: 'Banglore',
@@ -182,30 +204,34 @@ const Service = () => {
         date: '2023/07/02',
       },
       {
+        id:1,
         hospital: 'Apolo Hospital',
         asset: 'PFT USB',
         city: 'Banglore',
         department: 'ECG',
-        issue: 'Issue 1',
+        issue: 'Issue 2 MJHNJNHJH JHJHJHJH JHJJHHHGGGFDDDBJKK',
         date: '2023/07/01',
       },
       {
+        id:2,
         hospital: 'Megan Hospital',
         asset: 'PFT USB',
         city: 'Shivamogga',
-        department: 'Radiology',
-        issue: 'Issue 2',
+        department: 'ICU',
+        issue: 'Issue 2 msdddfdfssasd fdsfdsvcdc',
         date: '2023/07/02',
       },
       {
+        id:3,
         hospital: 'KIMS Hospital',
         asset: 'PFT USB',
         city: 'Banglore',
         department: 'ECG',
-        issue: 'Issue 3',
+        issue: 'Issue 3 fdfssasd fdsfdsvcdc hhhdnnadkjdj',
         date: '2023/07/03',
       },
       {
+        id:4,
         hospital: 'Narayana Hrudayalaya',
         asset: 'PFT USB',
         city: 'Shivamogga',
@@ -214,22 +240,25 @@ const Service = () => {
         date: '2023/07/04',
       },
       {
+        id:5,
         hospital: 'Subbhaiah Hospital',
         asset: 'PFT USB',
         city: 'Shivmogga',
-        department: 'Radiology',
+        department: 'ECG',
         issue: 'Issue 5',
         date: '2023/07/05',
       },
       {
+        id:6,
         hospital: 'SS Hospital',
         asset: 'PFT USB',
         city: 'Davangere',
-        department: 'ICU',
+        department: 'Radiology',
         issue: 'Issue 3',
         date: '2023/07/06',
       },
       {
+        id:7,
         hospital: 'MAX Hospital',
         asset: 'PFT USB',
         city: 'Banglore',
@@ -238,30 +267,34 @@ const Service = () => {
         date: '2023/07/02',
       },
       {
+        id:1,
         hospital: 'Apolo Hospital',
         asset: 'PFT USB',
         city: 'Banglore',
         department: 'ECG',
-        issue: 'Issue 1',
+        issue: 'Issue 2 MJHNJNHJH JHJHJHJH JHJJHHHGGGFDDDBJKK',
         date: '2023/07/01',
       },
       {
+        id:2,
         hospital: 'Megan Hospital',
         asset: 'PFT USB',
         city: 'Shivamogga',
         department: 'ICU',
-        issue: 'Issue 2',
+        issue: 'Issue 2 msdddfdfssasd fdsfdsvcdc',
         date: '2023/07/02',
       },
       {
+        id:3,
         hospital: 'KIMS Hospital',
         asset: 'PFT USB',
         city: 'Banglore',
         department: 'ECG',
-        issue: 'Issue 3',
+        issue: 'Issue 3 fdfssasd fdsfdsvcdc hhhdnnadkjdj',
         date: '2023/07/03',
       },
       {
+        id:4,
         hospital: 'Narayana Hrudayalaya',
         asset: 'PFT USB',
         city: 'Shivamogga',
@@ -270,62 +303,7 @@ const Service = () => {
         date: '2023/07/04',
       },
       {
-        hospital: 'Subbhaiah Hospital',
-        asset: 'PFT USB',
-        city: 'Shivmogga',
-        department: 'Radiology',
-        issue: 'Issue 5',
-        date: '2023/07/05',
-      },
-      {
-        hospital: 'SS Hospital',
-        asset: 'PFT USB',
-        city: 'Davangere',
-        department: 'ICU',
-        issue: 'Issue 3',
-        date: '2023/07/06',
-      },
-      {
-        hospital: 'MAX Hospital',
-        asset: 'PFT USB',
-        city: 'Banglore',
-        department: 'ECG',
-        issue: 'Issue 2',
-        date: '2023/07/02',
-      },
-      {
-        hospital: 'Apolo Hospital',
-        asset: 'PFT USB',
-        city: 'Banglore',
-        department: 'ECG',
-        issue: 'Issue 1',
-        date: '2023/07/01',
-      },
-      {
-        hospital: 'Megan Hospital',
-        asset: 'PFT USB',
-        city: 'Shivamogga',
-        department: 'Radiology',
-        issue: 'Issue 2',
-        date: '2023/07/02',
-      },
-      {
-        hospital: 'KIMS Hospital',
-        asset: 'PFT USB',
-        city: 'Banglore',
-        department: 'ECG',
-        issue: 'Issue 3',
-        date: '2023/07/03',
-      },
-      {
-        hospital: 'Narayana Hrudayalaya',
-        asset: 'PFT USB',
-        city: 'Shivamogga',
-        department: 'ICU',
-        issue: 'Issue 4',
-        date: '2023/07/04',
-      },
-      {
+        id:5,
         hospital: 'Subbhaiah Hospital',
         asset: 'PFT USB',
         city: 'Shivmogga',
@@ -334,14 +312,16 @@ const Service = () => {
         date: '2023/07/05',
       },
       {
+        id:6,
         hospital: 'SS Hospital',
         asset: 'PFT USB',
         city: 'Davangere',
-        department: 'ICU',
+        department: 'Radiology',
         issue: 'Issue 3',
         date: '2023/07/06',
       },
       {
+        id:7,
         hospital: 'MAX Hospital',
         asset: 'PFT USB',
         city: 'Banglore',
@@ -378,7 +358,10 @@ const Service = () => {
   const filteredServiceRequests = getServiceRequests().filter((request) =>
     request.hospital.toLowerCase().includes(searchQuery.toLowerCase())
   );
-    
+
+ 
+
+  
     return ( 
         <Box width='100%' background='#FAF5EE'>
          <Box marginLeft={{xl:'250px', lg:'90px'}}>
@@ -459,12 +442,12 @@ const Service = () => {
                     {filteredServiceRequests.map((request, index) => (
                         <Box width='1030px'>
                         <TableRow display="flex" key={index}>
-                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'250px',height:'35px',borderColor:'black'}} component="th">{(request.hospital)}</TableCell>
-                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'180px',height:'35px',borderColor:'black'}} >{(request.asset)}</TableCell>
-                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'120px',height:'35px',borderColor:'black'}} >{(request.city)}</TableCell>
-                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'120px',height:'35px',borderColor:'black'}}>{(request.department)}</TableCell>
-                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'100px',height:'35px',borderColor:'black',overflow: 'hidden', textOverflow: "ellipsis", display: "-webkit-box",  "-webkit-line-clamp": '2', "-webkit-box-orient": "vertical",}}>{(request.issue)}</TableCell>
-                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'120px',height:'35px',borderColor:'black'}}>{(request.date)}</TableCell>
+                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400',color:'#212427', width:'250px',height:'35px',borderColor:'black'}} component="th"><Link  to={`/issuepage/${request.hospital}`} style={{color:'#1746A2', textDecoration:'none', borderBottom:'2px solid #1746A2'}}>{request.hospital}</Link></TableCell>
+                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'180px',height:'35px',borderColor:'black'}} >{request.asset}</TableCell>
+                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'120px',height:'35px',borderColor:'black'}} >{request.city}</TableCell>
+                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'120px',height:'35px',borderColor:'black'}}>{request.department}</TableCell>
+                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'100px',height:'35px',borderColor:'black',overflow: 'hidden', textOverflow: "ellipsis", display: "-webkit-box",  "-webkit-line-clamp": '2', "-webkit-box-orient": "vertical",}}>{request.issue}</TableCell>
+                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'120px',height:'35px',borderColor:'black'}}>{request.date}</TableCell>
                         </TableRow>
                         </Box>
                     ))}
