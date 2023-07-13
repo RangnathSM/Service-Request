@@ -1,7 +1,8 @@
 import '../Styles/Issue.css'
 import { Box } from '@mui/system';
 import {  Typography } from '@mui/material';
-import {useParams} from 'react-router-dom'
+import {useParams, Link} from 'react-router-dom'
+
 
 const serviceRequests = [
     {
@@ -12,7 +13,7 @@ const serviceRequests = [
         department: 'ECG',
         issue: 'Issue 2 MJHNJNHJH JHJHJHJH JHJJHHHGGGFDDDBJKKkkmmsdksmamcn nsananajdnxc njashbdjabxcxncjn nbcahbkacnad',
         date: '2023/07/01',
-        images:[ 'https://img.freepik.com/free-photo/doctor-getting-patient-ready-ct-scan_23-2149367401.jpg?size=626&ext=jpg' , 'https://media.istockphoto.com/id/505988240/photo/interventional-x-ray-system.jpg?s=612x612&w=0&k=20&c=cgAGZr7X2rAE3XiIduRzAyZxYhsitoTykl4hudPKztA=']    
+        image:[ 'https://img.freepik.com/free-photo/doctor-getting-patient-ready-ct-scan_23-2149367401.jpg?size=626&ext=jpg' , 'https://media.istockphoto.com/id/505988240/photo/interventional-x-ray-system.jpg?s=612x612&w=0&k=20&c=cgAGZr7X2rAE3XiIduRzAyZxYhsitoTykl4hudPKztA=', 'https://www.harmonyanimalhospital.net/wp-content/uploads/2019/09/pet-eeg.jpg']    
       },
       {
         id:2,
@@ -301,14 +302,14 @@ const Issue = () => {
            </Box>
          </Box>
          <Box >
-         {selectedHospital.images && selectedHospital.images.length > 0 && (
+         {selectedHospital.image && selectedHospital.image.length > 0 && (
             <Box>
             <Box>
             <Typography sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'100px',height:'30px'}}>Photo:</Typography>
             </Box>
             <Box display='flex' gap='2rem'>
-            {selectedHospital.images.map((image, index) => (
-            <img  key={index} src={image} alt='' style={{maxWidth:'23.5vw', maxHeight:'30vw', border:'none'}}/>
+            {selectedHospital.image.map((image, id) => (
+            <Link to={`/image/${id}`} key={id}><img   src={image} alt='' style={{maxWidth:'15vw', maxHeight:'30vw', border:'none'}}/></Link>
             ))}
             </Box>
             </Box>

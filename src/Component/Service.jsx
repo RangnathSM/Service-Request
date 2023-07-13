@@ -82,8 +82,8 @@ const Service = () => {
         department: 'ECG',
         issue: 'Issue 2 MJHNJNHJH JHJHJHJH JHJJHHHGGGFDDDBJKKkkmmsdksmamcn nsananajdnxc njashbdjabxcxncjn nbcahbkacnad',
         date: '2023/07/01',
-        img:[
-          "https://img.freepik.com/free-photo/doctor-getting-patient-ready-ct-scan_23-2149367401.jpg?size=626&ext=jpg","https://img.freepik.com/free-photo/doctor-getting-patient-ready-ct-scan_23-2149367401.jpg?size=626&ext=jpg"
+        image:[
+          'https://img.freepik.com/free-photo/doctor-getting-patient-ready-ct-scan_23-2149367401.jpg?size=626&ext=jpg','https://media.istockphoto.com/id/505988240/photo/interventional-x-ray-system.jpg?s=612x612&w=0&k=20&c=cgAGZr7X2rAE3XiIduRzAyZxYhsitoTykl4hudPKztA=', 'https://www.harmonyanimalhospital.net/wp-content/uploads/2019/09/pet-eeg.jpg'
         ]
       },
       {
@@ -363,7 +363,7 @@ const Service = () => {
 
   
     return ( 
-        <Box width='100%' background='#FAF5EE'>
+        <Box minWidth='100vw' background='#FAF5EE'>
          <Box marginLeft={{xl:'250px', lg:'90px'}}>
          <Box display='flex' >
                 <Typography sx={{fontSize:{xl:'24px', lg:'24px', md:'22px', sm:'20px', xs:'20px'}, fontWeight:'500', color:'#FF731D',marginTop:'35px', marginLeft:'20px', width:{xl:'220px', lg:'220px', md:'220px', sm:'120px', xs:'80px'} }} >Service Requests</Typography>
