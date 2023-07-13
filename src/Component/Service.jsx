@@ -80,7 +80,7 @@ const Service = () => {
         asset: 'PFT USB',
         city: 'Banglore',
         department: 'ECG',
-        issue: 'Issue 2 MJHNJNHJH JHJHJHJH JHJJHHHGGGFDDDBJKKkkmmsdksmamcn nsananajdnxc njashbdjabxcxncjn nbcahbkacnad',
+        issue: 'Issue 2 rangnath MJHNJNHJH JHJHJHJH JHJJHHHGGGFDDDBJKKkkmmsdksmamcn nsananajdnxc njashbdjabxcxncjn nbcahbkacnad',
         date: '2023/07/01',
         image:[
           'https://img.freepik.com/free-photo/doctor-getting-patient-ready-ct-scan_23-2149367401.jpg?size=626&ext=jpg','https://media.istockphoto.com/id/505988240/photo/interventional-x-ray-system.jpg?s=612x612&w=0&k=20&c=cgAGZr7X2rAE3XiIduRzAyZxYhsitoTykl4hudPKztA=', 'https://www.harmonyanimalhospital.net/wp-content/uploads/2019/09/pet-eeg.jpg'
@@ -423,7 +423,7 @@ const Service = () => {
                 </Box>
                 </Box>
             </Box>
-            <Box width={{xl:'1030px', lg:'1030px', md:'850px', sm:'500px', xs:'400px'}} height='937px' sx={{boxShadow : "0px 0px 4px 0px #00000033", border: "0px solid #1746A280", borderRadius:'15px', marginTop:{xl:'20px', lg:'20px', md:'20px', sm:'20px', xs:'20px'}, marginLeft:{xl:'0px', lg:'0px', md:'25px', sm:'50px', xs:'38px'}}} >
+            <Box maxWidth='1030px' height='937px' sx={{boxShadow : "0px 0px 4px 0px #00000033", border: "0px solid #1746A280", borderRadius:'15px', marginTop:{xl:'20px', lg:'20px', md:'20px', sm:'20px', xs:'20px'}, marginLeft:{xl:'0px', lg:'0px', md:'25px'}}} >
                 <TableContainer sx={{ minWidth:{xl:1030, lg:1030, md:850, sm:500, xs:400}, height:'937px',borderRadius:'15px', }} aria-label="simple table">
                 <Table>
                     <TableHead width='1030px' height='50px'>
