@@ -369,7 +369,7 @@ const Service = () => {
                 <Typography sx={{fontSize:{xl:'24px', lg:'24px', md:'22px', sm:'20px', xs:'20px'}, fontWeight:'500', color:'#FF731D',marginTop:'35px', marginLeft:'20px', width:{xl:'220px', lg:'220px', md:'220px', sm:'120px', xs:'80px'} }} >Service Requests</Typography>
                 <Box display='flex' marginLeft={{xl:'31%', lg:'34%', md:'28%', sm:'20%', xs:'10%'}} marginTop={{xl:'10px', lg:'10px', md:'10px', sm:'30px', xs:'30px'}}>
                 <Box>
-                <TextField value={searchQuery} onChange={handleSearchChange} InputProps={{startAdornment: (<InputAdornment><IconButton><SearchIcon /></IconButton></InputAdornment>)}} placeholder='Search' sx={{  "& fieldset": { borderRadius:'36px',border: "1px solid black", height:'56px', width:{xl:'247px', lg:'247px', md:'247px', sm:'200px', xs:'180px'} } }}></TextField>
+                <TextField value={searchQuery} onChange={handleSearchChange} InputProps={{startAdornment: (<InputAdornment><IconButton><SearchIcon /></IconButton></InputAdornment>)}} placeholder='Search' sx={{  "& fieldset": { borderRadius:'36px',border: "1px solid black", height:'56px', maxWidth:'247px' } }}></TextField>
                 </Box>
                 <Box  display='flex' marginTop='-10px'>
                 <IconButton onClick={handleSortClick} type='button'><SortIcon sx={{width:'60px', height:'40px', color:'#FF731D'}}></SortIcon></IconButton>
@@ -428,28 +428,32 @@ const Service = () => {
                 <Table>
                     <TableHead width='1030px' height='50px'>
                     <TableRow sx={{background:'#EFF5FE' }}>
+                        <TableCell sx={{width:'1030px'}}>
                         <Box width='1030px' display="flex">
-                        <TableCell align="left" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'250px',height:'30px'}} >Hospital Name</TableCell>
-                        <TableCell align="left" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'180px',height:'30px'}} >Asset Name</TableCell>
-                        <TableCell align="left" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'120px',height:'30px'}} >City</TableCell>
-                        <TableCell align="left" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'120px',height:'30px'}} >Department</TableCell>
-                        <TableCell align="left" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'100px',height:'30px'}} >Issue</TableCell>
-                        <TableCell align="left" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'120px',height:'30px'}} >Date</TableCell>
+                        <Typography align="left" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'250px',height:'30px'}} >Hospital Name</Typography>
+                        <Typography align="left" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'180px',height:'30px'}} >Asset Name</Typography>
+                        <Typography align="left" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'160px',height:'30px'}} >City</Typography>
+                        <Typography align="left" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'160px',height:'30px'}} >Department</Typography>
+                        <Typography align="left" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'130px',height:'30px'}} >Issue</Typography>
+                        <Typography align="left" sx={{fontSize:'20px', fontWeight:'500', color:'#1746A2',width:'120px',height:'30px'}} >Date</Typography>
                         </Box>
+                        </TableCell>
                     </TableRow>
                     </TableHead>
                     <TableBody>
                     {filteredServiceRequests.map((request, index) => (
-                        <Box width='1030px'>
                         <TableRow display="flex" key={index}>
-                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400',color:'#212427', width:'250px',height:'35px',borderColor:'black'}} component="th"><Link  to={`/issuepage/${request.hospital}`} style={{color:'#1746A2', textDecoration:'none', borderBottom:'2px solid #1746A2'}}>{request.hospital}</Link></TableCell>
-                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'180px',height:'35px',borderColor:'black'}} >{request.asset}</TableCell>
-                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'120px',height:'35px',borderColor:'black'}} >{request.city}</TableCell>
-                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'120px',height:'35px',borderColor:'black'}}>{request.department}</TableCell>
-                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'100px',height:'35px',borderColor:'black',overflow: 'hidden', textOverflow: "ellipsis", display: "-webkit-box",  "-webkit-line-clamp": '2', "-webkit-box-orient": "vertical",}}>{request.issue}</TableCell>
-                        <TableCell align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'120px',height:'35px',borderColor:'black'}}>{request.date}</TableCell>
-                        </TableRow>
+                          <TableCell display='flex' sx={{borderBottom:'1px solid black', width:'1030px'}} >
+                          <Box width='1030px'display='flex' >
+                        <Typography align="left" sx={{fontSize:'18px', fontWeight:'400',color:'#212427', width:'250px',height:'35px',}} component="th"><Link  to={`/issuepage/${request.hospital}`} style={{color:'#1746A2', textDecoration:'none', borderBottom:'2px solid #1746A2'}}>{request.hospital}</Link></Typography>
+                        <Typography align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'180px',height:'35px',borderColor:'black'}} >{request.asset}</Typography>
+                        <Typography align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'160px',height:'35px',borderColor:'black'}} >{request.city}</Typography>
+                        <Typography align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'160px',height:'35px',borderColor:'black'}}>{request.department}</Typography>
+                        <Typography align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'130px',height:'50px',borderColor:'black',overflow: 'hidden', textOverflow: "ellipsis", display: "-webkit-box",  "-webkit-line-clamp": '2', "-webkit-box-orient": "vertical",}}>{request.issue}</Typography>
+                        <Typography align="left" sx={{fontSize:'18px', fontWeight:'400', color:'#212427', width:'120px',height:'35px',borderColor:'black'}}>{request.date}</Typography>
                         </Box>
+                          </TableCell>
+                        </TableRow>
                     ))}
                     </TableBody>
                     </Table>
